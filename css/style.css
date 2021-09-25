@@ -1,0 +1,190 @@
+:root {
+    --color-primary: hsl(225, 100%, 94%);
+    --color-secondary: hsl(245, 75%, 52%);
+    --color-background: hsl(225, 100%, 98%);
+    --color-body: hsl(224, 23%, 55%);
+    --color-headings: hsl(223, 47%, 23%);
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* ************ */
+/* TYPOGRAPHY */
+/* ************ */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Red Hat Display', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../images/pattern-background-mobile.svg');
+    background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1440px) {
+    body {
+        background: url(../images/pattern-background-desktop.svg);
+        background-size: cover;
+    }
+}
+
+/* ************ */
+/* ORDER */
+/* ************ */
+.order {
+    width: 80%;
+    border-radius: 25px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.order__image {
+    width: 100%;
+}
+
+.order__header,
+.order__body {
+    padding: 2rem 3rem;
+}
+
+.order__header {
+    text-align: center;
+}
+
+.order__title {
+    color: var(--color-headings);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.order__description {
+    color: var(--color-body);
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+@media screen and (min-width: 640px) {
+    .order {
+        width: 60%;
+    }
+}
+@media screen and (min-width: 860px) {
+    .order {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .order {
+        width: 25%;
+    }
+}
+
+/* ************ */
+/* PLAN */
+/* ************ */
+.plan {
+    background: var(--color-background);
+    border-radius: 10px;
+    padding: 1.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 2fr 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.plan__title {
+    white-space: nowrap;
+    margin-bottom: 0.5rem;
+}
+
+.plan__price {
+    color: var(--color-body);
+}
+
+.plan__changer {
+    grid-area: 2 / 1 / 3 / 3;
+}
+.plan__changer:hover {
+    text-decoration: none;
+    color: var(--color-headings);
+}
+
+@media screen and (min-width: 375px) {
+    .plan {
+        grid-template: 1fr / 1fr 4fr 1fr;
+        justify-items: left;
+    }
+
+    .plan__changer {
+        grid-area: auto;
+    }
+}
+
+/* ************ */
+/* BUTTONS */
+/* ************ */
+.btn {
+    display: block;
+    margin-bottom: 2rem;
+    width: 100%;
+    padding: 2rem 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s ease-in, color 0.3s ease-in;
+}
+.btn--primary {
+    outline: none;
+    border-radius: 10px;
+    color: #fff;
+    background: var(--color-secondary);
+    border: none;
+    box-shadow: 0px 25px 30px 0px hsla(245, 75%, 52%, 0.25);
+}
+
+.btn--simple {
+    background: none;
+    color: var(--color-body);
+    border: none;
+}
+
+.btn--primary:hover {
+    background: hsl(245, 75%, 40%);
+}
+.btn--simple:hover {
+    color: hsl(224, 23%, 35%);
+}
+
+@media screen and (min-width: 640px) {
+    .btn {
+        font-size: 1.2rem;
+    }
+}
